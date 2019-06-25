@@ -3,7 +3,7 @@ Following a disaster, there are millions of communications from either direct or
 In this project, the dataset of communications with different categorical labels is given, ETL pipeline was built to clean the messages with regex and NLTK, then the pre-processed data was trained with machine learning pipeline, which is composed of tokenization, tfidf transformation, and multi-output classifier. Random forest classifier was applied as the core estimator, grid search was conducted for parameter optimization, prediction results were given via classfication_report function. See more details in the Jupyternotebook.   
 
 # Installation
-The code runs in Python 3, Python libraries like pandas, numpy and matplotlib are used in the code. 
+The code runs in Python 3, Python libraries like pandas, numpy and matplotlib are used in the code, nltk library is aslo installed and used for language processing.  
 
 # File Descriptions
 data/process_data.py - ETL script to clean data into the proper format by splitting up categories and making new columns for each as target variables.
