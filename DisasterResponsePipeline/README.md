@@ -6,11 +6,11 @@ In this project, the dataset of communications with different categorical labels
 The code runs in Python 3, Python libraries like pandas, numpy and matplotlib are used in the code. 
 
 # File Descriptions
-process_data.py - ETL script to clean data into the proper format by splitting up categories and making new columns for each as target variables.
+data/process_data.py - ETL script to clean data into the proper format by splitting up categories and making new columns for each as target variables.
 
-train_classifier.py - Script to tokenize messages from clean data and create new columns through feature engineering. The data with new features are trained with an ML pipeline and pickled.
+models/train_classifier.py - Script to tokenize messages from clean data and create new columns through feature engineering. The data with new features are trained with an ML pipeline and pickled.
 
-run.py - Main file to run Flask app that classifies messages based on the model and shows data visualizations.
+App/run.py - Main file to run Flask app that classifies messages based on the model and shows data visualizations.
 
 ETL Pipeline Preparation.ipynb - The notebook that shows steps of the ETL pipeline
 
@@ -30,6 +30,7 @@ Messages.csv - data contains messages with categories.
     `python run.py`
 
 3. Go to http://0.0.0.0:3001/
+(https://github.com/yueureka/DataScienceProjects/blob/master/DisasterResponsePipeline/disaster-response-project2.png)
 
 # Licensing and Acknowledgements
 The dataset is provided by Figure8, all rights reserved.  
