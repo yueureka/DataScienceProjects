@@ -30,7 +30,7 @@ Messages.csv - data contains messages with categories.
     `python run.py`
 
 3. Go to http://0.0.0.0:3001/
-(https://github.com/yueureka/DataScienceProjects/blob/master/DisasterResponsePipeline/disaster-response-project2.png)
+![alt text](https://github.com/yueureka/DataScienceProjects/blob/master/DisasterResponsePipeline/disaster-response-project2.png)
 
 # Licensing and Acknowledgements
 The dataset is provided by Figure8, all rights reserved.  
