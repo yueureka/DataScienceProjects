@@ -1,6 +1,7 @@
 import sys
 import pandas as pd
 import numpy as np
+from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
     '''
@@ -50,12 +51,19 @@ def clean_data(df):
 
 
 def save_data(df, database_filename):
-    # write dataframe to sqlite database
+    ''' write dataframe to sqlite database'''
     engine = create_engine('sqlite:///{}'.format(database_filename))
     df.to_sql('message_categories', engine, index=False) 
 
 
 def main():
+    '''
+    Main function to run the data cleaning pipeline:
+    load_data
+    clean_data
+    save_data
+    '''
+
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
