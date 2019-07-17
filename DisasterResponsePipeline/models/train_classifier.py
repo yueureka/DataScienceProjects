@@ -23,6 +23,9 @@ from sqlalchemy import create_engine
 import pickle
 
 def load_data(database_filepath):
+    '''
+    Load the cleaned dataset from sql database
+    '''
     engine = create_engine('sqlite:///{}'.format(database_filepath))
     df = pd.read_sql_table('message_categories', engine)
     X = df['message']
@@ -58,6 +61,9 @@ def tokenize(text):
 
 
 def build_model():
+    '''
+    Build the machine learning pipeline with GridSearch 
+    '''
     pipeline = Pipeline([
             ('vect', CountVectorizer(tokenizer=tokenize)),
             ('tfidf', TfidfTransformer()),
@@ -75,6 +81,10 @@ def build_model():
 
 
 def evaluate_model(model, X_test, y_test, category_names):
+    '''
+    Print the predicted outputs and accuracy table
+    '''
+
     y_pred = model.predict(X_test)
     print(classification_report(y_test.iloc[:,1:].values, np.array([x[1:] for x in y_pred]), target_names=y_test.columns.values.tolist()[1:]))
     
