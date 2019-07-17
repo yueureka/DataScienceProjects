@@ -20,11 +20,15 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.multioutput import MultiOutputClassifier
 
 from sqlalchemy import create_engine
+import pickle
 
 def load_data(database_filepath):
     engine = create_engine('sqlite:///{}'.format(database_filepath))
     df = pd.read_sql_table('message_categories', engine)
-    return df
+    X = df['message']
+    y = df.iloc[:, 4:]
+    category_names = list(y.columns)
+    return X, y, category_names
 
 
 def tokenize(text):
@@ -70,10 +74,9 @@ def build_model():
     return cv
 
 
-def evaluate_model(model, X_test, Y_test, category_names):
+def evaluate_model(model, X_test, y_test, category_names):
     y_pred = model.predict(X_test)
-    print(classification_report(y_test.iloc.values, np.array([x for x in y_pred]), 
-                            target_names=category_names)
+    print(classification_report(y_test.iloc[:,1:].values, np.array([x[1:] for x in y_pred]), target_names=y_test.columns.values.tolist()[1:]))
     
 
 
