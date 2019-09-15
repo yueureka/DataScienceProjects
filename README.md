@@ -7,3 +7,4 @@ The projects are:
 3. [Improved customer advertising efficiency with unsupervised learning ](https://github.com/yueureka/DataScienceProjects/tree/master/UnsupervisedLearning)
 4. [Data science blog on "Global suicide rate analysis"](https://github.com/yueureka/DataScienceProjects/tree/master/BlogPost)
 5. [Disaster response pipeline](https://github.com/yueureka/DataScienceProjects/tree/master/DisasterResponsePipeline)
+6. [Capstone: Customer Segmentation](https://github.com/yueureka/DataScienceProjects/tree/master/CustomerSegmentation)
